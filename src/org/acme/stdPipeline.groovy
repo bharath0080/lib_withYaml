@@ -2,11 +2,8 @@
 package org.acme;
 import groovy.util.*
 //@Grab('org.yaml:snakeyaml:1.17')
-//@Grab(group="org.yaml", module="snakeyaml", version="[1.0,]")
-@Grab(group='com.amazonaws', module='aws-java-sdk-ec2', version='1.11.198')
-import com.amazonaws.services.ec2.* 
-import com.amazonaws.services.ec2.model.* 
-import com.amazonaws.regions.*
+@Grab(group="org.yaml", module="snakeyaml", version="[1.0,]")
+
 
 
 import org.yaml.snakeyaml.Yaml
