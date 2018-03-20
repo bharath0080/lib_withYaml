@@ -1,9 +1,11 @@
 #!/bin/groovy
 package org.acme;
 import groovy.util.*
+@NonCps
+@Grab('org.yaml:snakeyaml:1.17')
 import org.yaml.snakeyaml.Yaml
 //import org.yaml.snakeyaml.Yaml
-//@Grab('org.yaml:snakeyaml:1.17')
+
 //@Grab(group="org.yaml", module="snakeyaml", version="1.20")
 def execute() {
 
