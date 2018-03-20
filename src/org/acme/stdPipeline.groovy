@@ -8,7 +8,7 @@ import groovy.util.*
     @grabconfig(systemClassLoader=true)
 ])
 */
-import org.yaml.snakeyaml
+import org.yaml.snakeyaml.jars.*
 //import org.yaml.snakeyaml.Yaml
 
 //@Grab(group="org.yaml", module="snakeyaml", version="1.20")
