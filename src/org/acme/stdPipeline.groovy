@@ -1,6 +1,9 @@
 #!/bin/groovy
 package org.acme;
 import groovy.util.*
+@Grab(group='org.springframework', module='spring-orm', version='3.2.5.RELEASE')
+import org.springframework.jdbc.core.JdbcTemplate
+
 //@Grab('org.yaml:snakeyaml:1.17')
 //@Grab(group='org.yaml', module='snakeyaml', version='1.0')
 
