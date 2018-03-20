@@ -4,8 +4,8 @@ import groovy.util.*
 
 
 @Grapes([
-    @Grab('org.yaml:snakeyaml:1.17')
-    @GrabConfig( systemClassLoader=true )
+    @grab('org.yaml:snakeyaml:1.17')
+    @grabconfig(systemClassLoader=true)
 ])
 import org.yaml.snakeyaml.Yaml
 //import org.yaml.snakeyaml.Yaml
