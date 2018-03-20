@@ -3,7 +3,7 @@ package org.acme;
 
 def execute() {
 
-  node {
+  node('LINUX') {
 
     stage('Initialize') {
       checkout scm
