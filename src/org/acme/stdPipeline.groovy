@@ -10,7 +10,7 @@ import org.yaml.snakeyaml.Yaml
 
 def execute() {
 
-  node('LINUX') {
+  node('linux') {
 
     stage('Initialize') {
       checkout scm
