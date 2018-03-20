@@ -8,7 +8,7 @@ pythonPipeline(pipelineDefinition) {
 }
 
 def executePipeline() {
-  node('LINUX') {
+  node('linux') {
     if (runTests) {
       stage('Run Tests') {
         //sh pd.testCommand
