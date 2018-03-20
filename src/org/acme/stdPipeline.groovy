@@ -2,7 +2,11 @@
 package org.acme;
 import groovy.util.*
 
-@Grab('org.yaml:snakeyaml:1.17')
+
+@Grapes([
+    @Grab('org.yaml:snakeyaml:1.17')
+    @GrabConfig( systemClassLoader=true )
+])
 import org.yaml.snakeyaml.Yaml
 //import org.yaml.snakeyaml.Yaml
 
