@@ -17,7 +17,7 @@ def execute() {
       println pipelineDefinition
       //typePipeline=pipelineDefinition.pipelineType
       //def typePipeline="python"
-    }  
+    //}  
 
 		switch(pipelineDefinition.pipelineType) {
 		case 'python':
@@ -28,6 +28,6 @@ def execute() {
 			new nodeJSPipeline(pipelineDefinition).executePipeline()
 		}
 	}
-  
+  }
 
 }
