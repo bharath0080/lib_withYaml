@@ -9,14 +9,14 @@ pythonPipeline(pipelineDefinition) {
 
 def executePipeline() {
   node {
-    if (runTests) {
+    if (pd.runTests) {
       stage('Run Tests') {
         //sh pd.testCommand
 	sh "Running the testcases"
       }
     }
 
-    if (deployUponTestSuccess) {
+    if (pd.deployUponTestSuccess) {
       stage('Deploy') {
         //sh "path/to/a/deploy/bash/script.sh ${pd.deploymentEnvironment}"
 	sh "deploying the application"
