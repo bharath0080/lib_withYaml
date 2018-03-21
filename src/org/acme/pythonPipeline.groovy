@@ -7,16 +7,16 @@ pythonPipeline(pipelineDefinition) {
   pd = pipelineDefinition
 }
 
-def executePipeline() {
+def executePipeline(Map pipelineDefinition) {
   node {
-    if (runTests) {
+    if (pipelineDefinition.runTests) {
       stage('Run Tests') {
         //sh pd.testCommand
 	sh "Running the testcases"
       }
     }
 
-    if (deployUponTestSuccess) {
+    if (pipelineDefinition.deployUponTestSuccess) {
       stage('Deploy') {
         //sh "path/to/a/deploy/bash/script.sh ${pd.deploymentEnvironment}"
 	sh "deploying the application"
