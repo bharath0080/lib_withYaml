@@ -15,7 +15,8 @@ def execute() {
       Yaml parser = new Yaml()
       Map pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
       println pipelineDefinition
-      typePipeline=pipelineDefinition.pipelineType
+      //typePipeline=pipelineDefinition.pipelineType
+      def typePipeline="python"
     
 
 		switch(typePipeline) {
