@@ -16,10 +16,10 @@ def execute() {
       Map pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
       println pipelineDefinition
       //typePipeline=pipelineDefinition.pipelineType
-      def typePipeline="python"
-    
+      //def typePipeline="python"
+    }  
 
-		switch(typePipeline) {
+		switch(pipelineDefinition.pipelineType) {
 		case 'python':
 			// Instantiate and execute a Python pipeline
 			new pythonPipeline(pipelineDefinition).executePipeline()
@@ -28,6 +28,6 @@ def execute() {
 			new nodeJSPipeline(pipelineDefinition).executePipeline()
 		}
 	}
-  }
+  
 
 }
