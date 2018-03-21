@@ -1,12 +1,12 @@
 #!/usr/bin/groovy
 package org.acme;
-
+/*
 pythonPipeline(pipelineDefinition) {
   // Create a globally accessible variable that makes
   // the YAML pipeline definition available to all scripts
   pd = pipelineDefinition
 }
-
+*/
 def executePipeline(Map pipelineDefinition) {
   node {
     if (pipelineDefinition.runTests) {
