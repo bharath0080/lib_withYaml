@@ -7,8 +7,8 @@ pythonPipeline(pipelineDefinition) {
   pd = pipelineDefinition
 }
 */
-//def executePipeline(Map pipelineDefinition) {
-def executePipeline() {
+def executePipeline(Map pipelineDefinition) {
+
   node {
     if (pipelineDefinition.runTests) {
       stage('Run Tests') {
