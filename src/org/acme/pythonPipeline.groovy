@@ -14,16 +14,18 @@ pythonPipeline(pipelineDefinition) {
 def executePipeline(Map pipelineDefinition) {
   println "In execute pipeline"
   println pipelineDefinition
+  def runTest = pipelineDefinition.runTests
+  def deployOnTestSuccess = pipelineDefinition.deployUponTestSuccess
   node {
-    println pipelineDefinition
-    if (pipelineDefinition.runTests) {
+    //println pipelineDefinition
+    if (runTest) {
       stage('Run Tests') {
         //sh pd.testCommand
 	sh "echo Running the testcases"
       }
     }
 
-    if (pipelineDefinition.deployUponTestSuccess) {
+    if (deployOnTestSuccess) {
       stage('Deploy') {
         //sh "path/to/a/deploy/bash/script.sh ${pd.deploymentEnvironment}"
 	sh "echo deploying the application"
