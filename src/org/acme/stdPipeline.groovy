@@ -9,21 +9,27 @@ def execute() {
 
   node {
 
-    stage('Initialize') {
+    stage('Checkout') {
       checkout scm
-      echo 'Loading pipeline definition'
-      Yaml parser = new Yaml()
-      Map pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
-      println pipelineDefinition
-      //typePipeline=pipelineDefinition.pipelineType
-      //def typePipeline="python"
-    //}  
-
-		switch(pipelineDefinition.pipelineType) {
+    }
+	echo 'Loading pipeline definition'
+    Yaml parser = new Yaml()
+    Map pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
+    println pipelineDefinition
+	switch(pipelineDefinition.pipelineType) {
 		case 'python':
 			// Instantiate and execute a Python pipeline
 			//new pythonPipeline(pipelineDefinition).executePipeline()
-			new pythonPipeline().executePipeline()
+			if(pipelineDefinition.runTests){
+				stage('Run testcases'){
+					new pythonPipeline().executeTestCases(pipelineDefinition)
+				}
+			}
+			if(pipelineDefinition.deployUponTestSuccess){
+				stage('Deployment'){
+					new pythonPipeline().executeDeployment()
+				}
+			}
 		case 'nodejs':
 			// Instantiate and execute a NodeJS pipeline
 			new nodeJSPipeline(pipelineDefinition).executePipeline()
@@ -31,5 +37,4 @@ def execute() {
 	}
   }
 
-}
 return this
