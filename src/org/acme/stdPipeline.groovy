@@ -4,7 +4,7 @@ import groovy.util.*
 //@Grab(group="org.yaml", module="snakeyaml", version="1.20")
 
 import org.yaml.snakeyaml.*
-
+class git implements Serializable {
 def execute() {
 
   node {
@@ -39,5 +39,5 @@ def execute() {
 		}
 	}
   }
-
+}
 return this
