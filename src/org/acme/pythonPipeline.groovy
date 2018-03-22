@@ -11,7 +11,11 @@ pythonPipeline(pipelineDefinition) {
  }
 */
 
-def executePipeline (Map pipelineDefinition){
+def executePipeline (pipelineDefinition){
+	def config = [:]
+	pipelineDefinition.resolveStrategy = Closure.DELEGATE_FIRST
+	pipelineDefinition.delegate = config
+	body()
   println "In execute pipeline"
   println pipelineDefinition
   def runTest = pipelineDefinition.runTests
@@ -20,14 +24,14 @@ def executePipeline (Map pipelineDefinition){
   println deployOnTestSuccess
   node {
     //println pipelineDefinition
-    if (runTest) {
+    if (config.runTests) {
       stage('Run Tests') {
         //sh pd.testCommand
 	sh "echo Running the testcases"
       }
     }
 
-    if (deployOnTestSuccess) {
+    if (config.deployUponTestSuccess) {
       stage('Deploy') {
         //sh "path/to/a/deploy/bash/script.sh ${pd.deploymentEnvironment}"
 	sh "echo deploying the application"
