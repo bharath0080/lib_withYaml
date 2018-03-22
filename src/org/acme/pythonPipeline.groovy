@@ -11,7 +11,7 @@ pythonPipeline(pipelineDefinition) {
  }
 */
 
-def executePipeline(Map pipelineDefinition) {
+def executePipeline (Map pipelineDefinition) implements Serializable {
   println "In execute pipeline"
   println pipelineDefinition
   def runTest = pipelineDefinition.runTests
