@@ -1,26 +1,27 @@
 #!/usr/bin/groovy
 package org.acme;
 
-
+/*
 pythonPipeline(pipelineDefinition) {
    def pipelineType = null
   // Create a globally accessible variable that makes
   // the YAML pipeline definition available to all scripts
   println "In pythonpipeline function"
   pd = pipelineDefinition
+ }
+*/
 
-
-def executePipeline() {
+def executePipeline(pipelineDefinition) {
   println "In execute pipeline"
   node {
-    if (runTests) {
+    if (pipelineDefinition.runTests) {
       stage('Run Tests') {
         //sh pd.testCommand
 	sh "echo Running the testcases"
       }
     }
 
-    if (deployUponTestSuccess) {
+    if (pipelineDefinition.deployUponTestSuccess) {
       stage('Deploy') {
         //sh "path/to/a/deploy/bash/script.sh ${pd.deploymentEnvironment}"
 	sh "echo deploying the application"
@@ -28,5 +29,5 @@ def executePipeline() {
     }
   }
 }
-}
+
 return this
