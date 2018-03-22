@@ -8,7 +8,7 @@ pythonPipeline(pipelineDefinition) {
   // the YAML pipeline definition available to all scripts
   println "In pythonpipeline function"
   pd = pipelineDefinition
-}
+
 
 def executePipeline() {
   println "In execute pipeline"
@@ -28,5 +28,5 @@ def executePipeline() {
     }
   }
 }
-
+}
 return this
