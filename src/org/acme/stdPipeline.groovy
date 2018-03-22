@@ -4,8 +4,6 @@ import groovy.util.*
 //@Grab(group="org.yaml", module="snakeyaml", version="1.20")
 
 import org.yaml.snakeyaml.*
-class stdPipelineq implements Serializable {
-@NonCPS
 def execute() {
 
   node {
@@ -40,5 +38,5 @@ def execute() {
 		}
 	}
   }
-}
-return this
+
+
