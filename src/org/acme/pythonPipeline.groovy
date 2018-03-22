@@ -13,7 +13,9 @@ pythonPipeline(pipelineDefinition) {
 
 def executePipeline(pipelineDefinition) {
   println "In execute pipeline"
+  println pipelineDefinition+"   hi"
   node {
+    println pipelineDefinition
     if (pipelineDefinition.runTests) {
       stage('Run Tests') {
         //sh pd.testCommand
