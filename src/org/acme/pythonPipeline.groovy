@@ -11,7 +11,7 @@ pythonPipeline(pipelineDefinition) {
  }
 */
 
-def executePipeline(pipelineDefinition) {
+def executePipeline(Map pipelineDefinition) {
   println "In execute pipeline"
   println pipelineDefinition+"   hi"
   node {
