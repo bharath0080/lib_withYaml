@@ -4,7 +4,8 @@ import groovy.util.*
 //@Grab(group="org.yaml", module="snakeyaml", version="1.20")
 
 import org.yaml.snakeyaml.*
-class stdPipeline implements Serializable {
+class stdPipelineq implements Serializable {
+@NonCPS
 def execute() {
 
   node {
