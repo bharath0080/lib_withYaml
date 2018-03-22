@@ -11,11 +11,11 @@ pythonPipeline(pipelineDefinition) {
  }
 */
 
-def executePipeline (Map body){
+def executePipeline (Map pipelineDefinition){
 	def config = [:]
-	body.resolveStrategy = Closure.DELEGATE_FIRST
-	body.delegate = config
-	body()
+	pipelineDefinition.resolveStrategy = Closure.DELEGATE_FIRST
+	pipelineDefinition.delegate = config
+	pipelineDefinition()
   println "In execute pipeline"
   println pipelineDefinition
   def runTest = config.runTests
