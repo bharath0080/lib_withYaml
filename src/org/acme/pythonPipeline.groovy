@@ -11,7 +11,7 @@ pythonPipeline(pipelineDefinition) {
  }
 */
 
-def executePipeline (body){
+def executePipeline (Map body){
 	def config = [:]
 	body.resolveStrategy = Closure.DELEGATE_FIRST
 	body.delegate = config
