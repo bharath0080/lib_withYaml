@@ -22,7 +22,8 @@ def execute() {
 			//new pythonPipeline(pipelineDefinition).executePipeline()
 			if(pipelineDefinition.runTests){
 				stage('Run testcases'){
-					new pythonPipeline().executeTestCases(pipelineDefinition)
+					//new pythonPipeline().executeTestCases(pipelineDefinition)
+					sh "echo bharath"
 				}
 			}
 			if(pipelineDefinition.deployUponTestSuccess){
