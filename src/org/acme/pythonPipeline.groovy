@@ -13,7 +13,7 @@ pythonPipeline(pipelineDefinition) {
 
 def executePipeline(Map pipelineDefinition) {
   println "In execute pipeline"
-  println pipelineDefinition+"   hi"
+  println pipelineDefinition
   node {
     println pipelineDefinition
     if (pipelineDefinition.runTests) {
