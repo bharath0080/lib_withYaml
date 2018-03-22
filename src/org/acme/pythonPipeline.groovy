@@ -11,11 +11,13 @@ pythonPipeline(pipelineDefinition) {
  }
 */
 
-def executePipeline implements Serializable (Map pipelineDefinition){
+def executePipeline (Map pipelineDefinition){
   println "In execute pipeline"
   println pipelineDefinition
   def runTest = pipelineDefinition.runTests
+  println runTest
   def deployOnTestSuccess = pipelineDefinition.deployUponTestSuccess
+  println deployOnTestSuccess
   node {
     //println pipelineDefinition
     if (runTest) {
