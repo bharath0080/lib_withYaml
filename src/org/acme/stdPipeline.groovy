@@ -20,7 +20,7 @@ def execute() {
 		case 'python':
 			// Instantiate and execute a Python pipeline
 			//new pythonPipeline(pipelineDefinition).executePipeline()
-			@NonCPS
+			
 			if(pipelineDefinition.runTests){
 				stage('Run testcases'){
 					//new pythonPipeline().executeTestCases(pipelineDefinition)
