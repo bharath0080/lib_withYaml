@@ -11,16 +11,16 @@ pythonPipeline(pipelineDefinition) {
  }
 */
 
-def executePipeline (pipelineDefinition){
+def executePipeline (body){
 	def config = [:]
-	pipelineDefinition.resolveStrategy = Closure.DELEGATE_FIRST
-	pipelineDefinition.delegate = config
+	body.resolveStrategy = Closure.DELEGATE_FIRST
+	body.delegate = config
 	body()
   println "In execute pipeline"
   println pipelineDefinition
-  def runTest = pipelineDefinition.runTests
+  def runTest = config.runTests
   println runTest
-  def deployOnTestSuccess = pipelineDefinition.deployUponTestSuccess
+  def deployOnTestSuccess = config.deployUponTestSuccess
   println deployOnTestSuccess
   node {
     //println pipelineDefinition
