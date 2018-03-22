@@ -23,7 +23,7 @@ def execute() {
 		case 'python':
 			// Instantiate and execute a Python pipeline
 			//new pythonPipeline(pipelineDefinition).executePipeline()
-			new pythonPipeline(pipelineDefinition).executePipeline()
+			new pythonPipeline().executePipeline(pipelineDefinition)
 		case 'nodejs':
 			// Instantiate and execute a NodeJS pipeline
 			new nodeJSPipeline(pipelineDefinition).executePipeline()
