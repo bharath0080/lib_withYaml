@@ -2,6 +2,7 @@
 package org.acme;
 
 pythonPipeline(pipelineDefinition) {
+   def pipelineType = null
   // Create a globally accessible variable that makes
   // the YAML pipeline definition available to all scripts
   println "In pythonpipeline function"
