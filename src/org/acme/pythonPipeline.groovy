@@ -1,14 +1,8 @@
 #!/usr/bin/groovy
 package org.acme;
 import org.yaml.snakeyaml.*
-def executePipeline (pipelineDefinition){
-  println "In execute pipeline"
-  println pipelineDefinition
-  def runTest = pipelineDefinition.runTests
-  println runTest
-  def deployOnTestSuccess = pipelineDefinition.deployUponTestSuccess
-  println deployOnTestSuccess
-  node {
+def executePipeline implements Serializable (){
+ node {
       Yaml parser = new Yaml()
       Map pipelineDefinition1 = parser.load(new File(pwd() + '/pipeline.yaml').text)  
     //println pipelineDefinition
