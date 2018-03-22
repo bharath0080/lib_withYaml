@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 //package org.acme;
-import org.acme;
+import org.acme.*
 
 pythonPipeline(pipelineDefinition) {
    def pipelineType = null
