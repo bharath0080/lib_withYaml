@@ -30,7 +30,9 @@ def execute() {
 				}
 			}
 			if(pipelineDefinition.deployUponTestSuccess){
+				echo "In another if"
 				stage('Deployment'){
+					
 					//new pythonPipeline().executeDeployment()
 					echo "kumar"
 				}
