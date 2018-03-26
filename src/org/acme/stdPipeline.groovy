@@ -17,7 +17,7 @@ def execute() {
     Map pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
     println pipelineDefinition
 	switch(pipelineDefinition.pipelineType) {
-		println "test"
+		//println "test"
 		case 'python':
 			// Instantiate and execute a Python pipeline
 			//new pythonPipeline(pipelineDefinition).executePipeline()
