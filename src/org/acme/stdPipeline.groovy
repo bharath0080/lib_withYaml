@@ -4,7 +4,7 @@ import groovy.util.*
 //@Grab(group="org.yaml", module="snakeyaml", version="1.20")
 
 import org.yaml.snakeyaml.*
-@NonCPS
+
 def execute() {
 
   node {
