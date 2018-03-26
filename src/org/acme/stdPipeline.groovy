@@ -16,13 +16,13 @@ def execute() {
     Yaml parser = new Yaml()
     Map pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
     println pipelineDefinition
-	switch(pipelineDefinition.pipelineType) {
-		//println "test"
+	switch(pipelineDefinition.pipelineType) {		
 		case 'python':
 			// Instantiate and execute a Python pipeline
 			//new pythonPipeline(pipelineDefinition).executePipeline()
 			println "in python"
 			if(pipelineDefinition.runTests){
+				echo "In if"
 				stage('Run testcases'){
 					//new pythonPipeline().executeTestCases(pipelineDefinition)
 					//sh "echo bharath"
@@ -40,5 +40,3 @@ def execute() {
 		}
 	}
   }
-
-
