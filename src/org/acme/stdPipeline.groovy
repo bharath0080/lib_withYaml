@@ -31,7 +31,8 @@ def execute() {
 			}
 			if(pipelineDefinition.deployUponTestSuccess){
 				stage('Deployment'){
-					new pythonPipeline().executeDeployment()
+					//new pythonPipeline().executeDeployment()
+					echo "kumar"
 				}
 			}
 		case 'nodejs':
