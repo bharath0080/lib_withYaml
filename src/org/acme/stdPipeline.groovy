@@ -29,7 +29,8 @@ def execute() {
 					echo "bharath"
 				}
 			}
-			if(pipelineDefinition.deployUponTestSuccess){
+			//if(pipelineDefinition.deployUponTestSuccess){
+		        if(pipelineDefinition.runTests){
 				echo "In another if"
 				stage('Deployment'){
 					
