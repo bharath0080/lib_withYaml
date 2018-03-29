@@ -30,7 +30,6 @@ def execute() {
 				}
 			}
 			//if(pipelineDefinition.deployUponTestSuccess){
-		@NonCps
 		        if(pipelineDefinition.runTests){
 				echo "In another if"
 				stage('Deployment'){
