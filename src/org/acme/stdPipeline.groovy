@@ -4,7 +4,7 @@ import groovy.util.*
 //@Grab(group="org.yaml", module="snakeyaml", version="1.20")
 
 import org.yaml.snakeyaml.*
-@NonCps
+
 def execute() {
 
   node {
@@ -30,6 +30,7 @@ def execute() {
 				}
 			}
 			//if(pipelineDefinition.deployUponTestSuccess){
+		@NonCps
 		        if(pipelineDefinition.runTests){
 				echo "In another if"
 				stage('Deployment'){
