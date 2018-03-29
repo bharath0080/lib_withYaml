@@ -37,7 +37,7 @@ def execute() {
 					//new pythonPipeline().executeDeployment()
 					echo "kumar"
 				}
-			}
+			//}
 		case 'nodejs':
 			// Instantiate and execute a NodeJS pipeline
 			new nodeJSPipeline(pipelineDefinition).executePipeline()
