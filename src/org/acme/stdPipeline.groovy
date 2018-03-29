@@ -30,7 +30,7 @@ def execute() {
 				}
 			}
 			//if(pipelineDefinition.deployUponTestSuccess){
-		        if(pipelineDefinition.runTests){
+		        
 				echo "In another if"
 				stage('Deployment'){
 					
