@@ -3,7 +3,7 @@ package org.acme;
 
 def executeTestCases (config){
 	println config
- 	sh "Running testcases"
+ 	sh "echo Running testcases"
 	sh config.testCommand
 }
 def executeDeployment(config){
