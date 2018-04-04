@@ -6,7 +6,7 @@ def executeTestCases (config){
  	sh "Running testcases"
 	sh pipelineDefinition.testCommand
 }
-def executeDeployment(){
+def executeDeployment(config){
 	sh "Deploying"
 }
 return this
