@@ -13,23 +13,22 @@ def execute() {
       checkout scm
     }
 	echo 'Loading pipeline definition'
-    Yaml parser = new Yaml()
-    Map pipelineDefinition = parser.load(new File(pwd() + '/pipeline.yaml').text)
-    println pipelineDefinition
-	switch(pipelineDefinition.pipelineType) {		
+   config = readYaml file: "./pipeline.yaml"
+   println config
+	switch(config.pipelineType) {		
 		case 'python':
 			// Instantiate and execute a Python pipeline
-			//new pythonPipeline(pipelineDefinition).executePipeline()
+			//new pythonPipeline(config).executePipeline()
 			println "in python"
-			if(pipelineDefinition.runTests){
+			if(config.runTests){
 				echo "In if"
 				stage('Run testcases'){
-					//new pythonPipeline().executeTestCases(pipelineDefinition)
+					//new pythonPipeline().executeTestCases(config)
 					//sh "echo bharath"
 					echo "bharath"
 				}
 			}
-			//if(pipelineDefinition.deployUponTestSuccess){
+			//if(config.deployUponTestSuccess){
 		        
 				echo "In another if"
 				stage('Deployment'){
@@ -40,7 +39,7 @@ def execute() {
 			//}
 		case 'nodejs':
 			// Instantiate and execute a NodeJS pipeline
-			new nodeJSPipeline(pipelineDefinition).executePipeline()
+			new nodeJSPipeline(config).executePipeline()
 		}
 	}
   }
