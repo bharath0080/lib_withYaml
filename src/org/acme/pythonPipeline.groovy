@@ -7,6 +7,6 @@ def executeTestCases (config){
 	sh config.testCommand
 }
 def executeDeployment(config){
-	sh "Deploying"
+	sh "echo Deploying"
 }
 return this
