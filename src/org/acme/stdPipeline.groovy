@@ -11,32 +11,26 @@ def execute() {
 	echo 'Loading pipeline definition'
    config = readYaml file: "./pipeline.yaml"
    println config
-	switch(config.pipelineType) {		
-		case 'python':
-			// Instantiate and execute a Python pipeline
-			//new pythonPipeline(config).executePipeline()
-			println "in python"
+   if(config.pipelineType == "python"){
+		println "in python"
 			if(config.runTests){
 				echo "In if"
 				stage('Run testcases'){
-					//new pythonPipeline().executeTestCases(config)
-					//sh "echo bharath"
-					echo "bharath"
+					new pythonPipeline().executeTestCases(config)
 				}
 			}
-			//if(config.deployUponTestSuccess){
+			if(config.deployUponTestSuccess){
 		        
 				echo "In another if"
 				stage('Deployment'){
 					
-					//new pythonPipeline().executeDeployment()
+					new pythonPipeline().executeDeployment(config)
 					echo "kumar"
 				}
-			//}
-		case 'nodejs':
+			}
+	}else if (config.pipelineType == "nodejs"){
 			echo "In Nodejs"
-			// Instantiate and execute a NodeJS pipeline
-			new nodeJSPipeline(config).executePipeline()
-		}
+	
 	}
   }
+}
