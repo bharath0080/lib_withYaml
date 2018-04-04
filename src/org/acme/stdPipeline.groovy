@@ -34,6 +34,7 @@ def execute() {
 				}
 			//}
 		case 'nodejs':
+			echo "In Nodejs"
 			// Instantiate and execute a NodeJS pipeline
 			new nodeJSPipeline(config).executePipeline()
 		}
