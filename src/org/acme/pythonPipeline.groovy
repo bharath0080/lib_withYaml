@@ -1,8 +1,8 @@
 #!/usr/bin/groovy
 package org.acme;
 
-def executeTestCases (pipelineDefinition){
-	println pipelineDefinition
+def executeTestCases (config){
+	println config
  	sh "Running testcases"
 	sh pipelineDefinition.testCommand
 }
