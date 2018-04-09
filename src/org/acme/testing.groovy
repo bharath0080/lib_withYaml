@@ -1,4 +1,5 @@
 #!/usr/bin/groovy
+package org.acme;
 
 def clone(){
 	git 'https://github.com/bharath0080/SampleStudentProject.git'
