@@ -2,6 +2,7 @@
 package org.acme;
 import groovy.util.*
 def execute() {
+	node{
 	stage('clone'){
 		new testing().clone()
 	}
@@ -11,5 +12,6 @@ def execute() {
 	}
 	stage('Results'){
 		new testing().results()
+	}
 	}
 }
